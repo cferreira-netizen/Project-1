@@ -12,4 +12,6 @@ import pygame
 import random
 
 # Colors
-PIPE_GREEN = (80, 200, 120)
+PIPE_GREEN = (80, 200, 90)
+PIPE_DARK = (50, 160, 60)
+BIRD_YELLOW = (255, 220, 50)
