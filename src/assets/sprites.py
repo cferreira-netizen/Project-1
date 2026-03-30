@@ -75,5 +75,21 @@ def update(self):
             self.w = self.BASE_W
             self.h = self.BASE_H
 
-    if self.fast_mode and self.fast_pipes_left <= 0:
-        self.end_fast()
+def rect(self):
+    return pygame.Rect(
+        int(self.x) - self.w // 2,
+        int(self.y) - self.h // 2,
+        self.w, self.h
+    )
+
+def draw(self, surf):
+    cx, cy = int(self.x), int(self.y)
+    hw, hh = self.w // 2, self.h // 2
+
+    if self.fast_mode and self._flash < 8:
+        body_color = (255, 255, 180)
+    elif self.shrunk:
+        body_color = (255, 180, 225)
+    else:
+        body_color = BIRD_YELLOW
+    pygame.draw.ellipse(surf, body_color, (cx - hw, cy - hh, self.w, self.h))
