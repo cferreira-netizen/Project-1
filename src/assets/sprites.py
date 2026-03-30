@@ -63,3 +63,17 @@ def apply_fast(self, pipes=10):
 def end_fast(self):
     self.fast_mode = False
     self.fast_pipes_left = 0
+
+def update(self):
+    self.vel += GRAVITY
+    self.y += self.vel
+
+    if self.shrunk:
+        self.shrink_timer -= 1
+        if self.shrink_timer <= 0:
+            self.shrunk = False
+            self.w = self.BASE_W
+            self.h = self.BASE_H
+
+    if self.fast_mode and self.fast_pipes_left <= 0:
+        self.end_fast()
