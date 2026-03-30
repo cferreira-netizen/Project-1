@@ -104,5 +104,7 @@ def draw(self, surf):
     pygame.draw.polygon (surf, ORANGE, [
         (cx + hw, cy),
         (cx + hw + max(8, self.w // 4), cy - 1),
-        (cx + hw, cy + max(4, self.h // 5), cy + max(3, self.h // 5))
+        (cx + hw, cy + max(4, self.h // 5)),
     ])
+
+    
