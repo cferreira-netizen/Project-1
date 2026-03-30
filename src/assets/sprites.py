@@ -107,4 +107,8 @@ def draw(self, surf):
         (cx + hw, cy + max(4, self.h // 5)),
     ])
 
-    
+    pygame.draw.polygon (surf, BIRD_DARK, [
+        (cx - 2, cy + 2),
+        (cx - hw + 2 , cy + hh),
+        (cx + hh // 2, cy + hh -2),
+    ])
