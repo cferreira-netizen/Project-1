@@ -98,4 +98,11 @@ def draw(self, surf):
     ex = cx + hw - max(6, self.w // 5)
     ey = cy - max(3,self.h // 5)
     r = max(3, self.w // 8)
-    
+    pygame.draw.circle(surf, WHITE, (ex, ey), r)
+    pygame.draw.circle(surf, BLACK, (ex + 1, ey + 1), r - 1)
+
+    pygame.draw.polygon (surf, ORANGE, [
+        (cx + hw, cy),
+        (cx + hw + max(8, self.w // 4), cy - 1),
+        (cx + hw, cy + max(4, self.h // 5), cy + max(3, self.h // 5))
+    ])
