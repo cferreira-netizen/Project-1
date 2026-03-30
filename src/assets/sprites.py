@@ -92,4 +92,5 @@ def draw(self, surf):
         body_color = (255, 180, 225)
     else:
         body_color = BIRD_YELLOW
-    pygame.draw.ellipse(surf, body_color, (cx - hw, cy - hh, self.w, self.h))
+    pygame.draw.ellipse(surf, body_color, (cx - hw, cy-hh, self.w, self.h))
+    pygame.draw.ellipse(surf, BIRD_DARK, (cx - hw, cy-hh, self.w, self.h), 2)
