@@ -41,6 +41,25 @@ def __init__(self, x, y):
     self.y = float(y)
     self.w = self.BASE_W
     self.h = self.BASE_H
-    self.vel_y = 0
-    self.alive = True
-    self.power_up = None
+    self.shrunk = False
+    self.shrink_timer = 0
+    self.fast_mode = False
+    self.fast_pipes_left = 0
+    self._flash = 0
+
+def flap(self):
+    self.vel_y = FLAP_STRENGTH
+
+def apply_shrink(self, frames=360):
+    self.shrunk = True
+    self.shrink_timer = frames
+    self.w = self.BASE_W // 2
+    self.h = self.BASE_H // 2
+
+def apply_fast(self, pipes=10):
+    self.fast_mode = True
+    self.fast_pipes_left = pipes
+
+def end_fast(self):
+    self.fast_mode = False
+    self.fast_pipes_left = 0
