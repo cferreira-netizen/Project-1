@@ -112,3 +112,7 @@ def draw(self, surf):
         (cx - hw + 2 , cy + hh),
         (cx + hh // 2, cy + hh -2),
     ])
+class Pipe:
+    Width = 60
+    CAP_H = 18
+    CAP_OVR = 8
